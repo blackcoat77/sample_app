@@ -2,32 +2,28 @@ require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 
-  def setup
-    @base_title = "Sample ROR application"
-  end
-
   test "should get home" do
     get root_url
     assert_response :success
-    assert_select "title", "#{@base_title}"
+    assert_select "title", "Sample ROR application"
   end
 
   test "should get help" do
     get static_pages_help_url
     assert_response :success
-    assert_select "title", "#{@base_title}"
+    assert_select "title", "Help | Sample ROR application"
   end
 
   test "should get about" do
     get static_pages_about_url
     assert_response :success
-    assert_select "title", "#{@base_title}"
+    assert_select "title", "About | Sample ROR application"
   end
 
   test "should get contact" do
     get static_pages_contact_url
     assert_response :success
-    # assert_select "title", "About | #{@base_title}"
+    assert_select "title", "Contact | Sample ROR application"
   end
 
 end
