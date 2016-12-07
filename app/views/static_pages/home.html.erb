@@ -1,15 +1,19 @@
-<h1>Sample app Home page</h1>
+<div class="center jumbotron">
 
-<p>Dramatically provide access to client-focused functionalities and client-centered markets. Conveniently disseminate enterprise channels without compelling technology. Dynamically reinvent high-payoff information with sticky solutions. Quickly
-    e-enable integrated leadership for scalable supply chains. Holisticly initiate extensive methods of empowerment for fully tested synergy. Intrinsicly promote customized leadership skills for granular partnerships. Distinctively reconceptualize
-    ethical services without an expanded array of supply chains. Quickly promote market-driven outsourcing whereas revolutionary total.
-</p>
+    <h1>Sample app Home page</h1>
 
-<%= yeller(['o', 'l', 'd']) %>
-<br>
-<%= random_subdomain %>
-<br>
-<%= string_shuffle("foobar") %>
-<br>
-<% palindrome?("foobar") %>
-<% palindrome?("rar") %>
+    <p>Dramatically provide access to client-focused functionalities and client-
+      centered markets. Conveniently disseminate enterprise channels without
+      compelling technology. Dynamically reinvent high-payoff information with
+      sticky solutions. Quickly
+    </p>
+    <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
+</div>
+
+<%= link_to image_tag("rails-logo.svg", alt: "Rails logo"), 'http://rubyonrails.org/' %>
+
+<%#= yeller(['o', 'l', 'd']) %>
+<%#= random_subdomain %>
+<%#= string_shuffle("foobar") %>
+<%# palindrome?("foobar") %>
+<%# palindrome?("rar") %>
