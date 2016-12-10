@@ -5,10 +5,13 @@ class User < ApplicationRecord
 
   # the code from above can be written like code below. Expalnation why:
   # The exclamation point ! is often used to indicate methods that mutate the
-  # object in question. In this case, email.downcase! modifies the email 
+  # object in question. In this case, email.downcase! modifies the email
   # attribute in place.
   #
   # before_save { self.email = email.downcase }
+
+  has_secure_password
+  validates :password, presence: true, length: { minimum: 6 }
 
   validates :name, presence: true, length: { maximum: 50 }
 
