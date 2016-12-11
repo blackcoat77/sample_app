@@ -7,9 +7,9 @@ $gray-light: #777;
 $gray-medium-light: #eaeaea;
 
 @mixin box_sizing {
-  -moz-box-sizing:     border-box;
-  -webkit-box-sizing:  border-box;
-  box-sizing:          border-box;
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
 }
 
 
@@ -120,7 +120,7 @@ footer ul {
   float: left;
   width: 100%;
   margin-top: 45px;
-  @include box-sizing; // callback to box_sizing from MIXINS
+  @include box_sizing; // callback to box_sizing from MIXINS
 }
 
 
@@ -160,4 +160,16 @@ aside {
 
 .gravatar_edit {
   margin-top: 15px;
+}
+
+/* FORMS **********************************************************************/
+input, textarea, select, .uneditable-input  {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing; // reuse box_sizing
+}
+
+input  {
+  height: auto !important;
 }
