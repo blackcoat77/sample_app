@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 
+  attr_accessor :remember_token
   # Use before_save to convert email letters to lowercase before saving it to DB
   before_save { email.downcase! }
 
@@ -30,6 +31,12 @@ class User < ApplicationRecord
   # Returns a random token
   def User.new_token
     SecureRandom.urlsafe_base64
+  end
+
+  # Remembers a user in the DB for use in persistent sessions
+  def remember
+    self.remember_token = User.new_token
+    update_attribute(:remember_digest, User.digest(remember_token))
   end
 
 end
