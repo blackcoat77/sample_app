@@ -20,4 +20,12 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
+
+  # Remember user in persistent session
+  def remember(user)
+    # call remember method from User model
+    user.remember
+    cookies.permanent.signed[:user_id] = user.id
+    cookies.permanent[:remember_token] = user.remember_token
+  end
 end
